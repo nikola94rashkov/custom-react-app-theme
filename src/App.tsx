@@ -1,3 +1,5 @@
-export const App = () => {
-  return "Custom React Theme";
+import { type FC } from 'react';
+
+export const App: FC = () => {
+	return 'Custom React Theme';
 };
