@@ -16,3 +16,4 @@ bin-release/
 # dependencies
 node_modules
 dist
+coverage
