@@ -7,6 +7,7 @@ const config: Configuration = {
     (process.env.NODE_ENV as "production" | "development" | undefined) ??
     "development",
   entry: "./src/index.tsx",
+
   module: {
     rules: [
       {
@@ -15,23 +16,28 @@ const config: Configuration = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.(sa|sc|c)ss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: "url-loader",
+        options: { limit: false },
       },
     ],
-  },
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
   },
   plugins: [
     new CopyWebpackPlugin({
       patterns: [{ from: "public" }],
     }),
   ],
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
 };
 
 export default config;
