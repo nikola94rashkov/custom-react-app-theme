@@ -15,5 +15,9 @@ bin-release/
 
 # dependencies
 node_modules
+
+# build
 dist
+
+# testing
 coverage

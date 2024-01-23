@@ -65,8 +65,8 @@
 		"format": "prettier --write './**/*.{js,jsx,ts,tsx,css,scss,md,json}' --config ./.prettierrc.json",
 		"lint:fix-imports": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
 		"test": "jest --testPathPattern=src/.*\\.test\\.tsx$",
-		"coverage": "jest --coverage --testPathPattern=src",
-		"watch": "jest --watch"
+		"test:coverage": "jest --coverage --testPathPattern=src",
+		"test:watch": "jest --watch"
 	},
 	"config": {
 		"commitizen": {
